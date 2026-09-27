@@ -1,0 +1,27 @@
+@startuml
+
+start
+
+:Player mulai di dalam dungeon;
+
+:Player bergerak;
+
+:Enemy mendeteksi Player;
+
+if (Player dalam jangkauan?) then (Ya)
+    :Enemy mencari jalur terdekat dengan A*;
+    :Enemy mmengejar Player;
+
+    if (player berhasil tertangkap?) then (Ya)
+        :Game Over;
+    else (Tidak)
+        :Enemy terus mengejar Player;
+    endif
+
+else (Tidak)
+    :Enemy diam di tempat;
+endif
+
+stop
+
+@enduml
